@@ -1,0 +1,539 @@
+/* Reset and Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: #ffffff;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Common Utility Classes */
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gradient-text-blue {
+    color: transparent;
+    background-clip: text;
+    background-image: linear-gradient(180deg, #019fd4 0%, #80e3ff 100%);
+}
+
+.gradient-text-pink {
+    color: transparent;
+    background-clip: text;
+    background-image: linear-gradient(180deg, rgb(153, 3, 148) 0%, orchid 100%);
+}
+
+.shadow-hover {
+    position: relative;
+    top: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.shadow-hover:hover {
+    top: -3px;
+}
+
+.shadow-hover.blue:hover {
+    box-shadow: 0px 1px 15px #0cd6ff81;
+}
+
+.shadow-hover.pink:hover {
+    box-shadow: 0px 1px 15px orchid;
+}
+
+/* Brand/Header Styles */
+.brand {
+    position: fixed;
+    width: 100%;
+    padding: 10px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    top: 0;
+}
+
+.brand-content {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.brand h1.left {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    margin: 0;
+    padding: 10px 0px 10px 10px;
+}
+
+.brand h1.right {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    margin: 0;
+    padding: 10px 10px 10px 0px;
+}
+
+.brand .login-button {
+    padding: 12px 24px;
+    border-radius: 20px;
+    color: white;
+    background-color: #003f53;
+    border: 1px solid lightskyblue;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+}
+
+.brand .login-button:hover {
+    background-color: rgb(71, 135, 174);
+    border: 1px solid rgb(255, 255, 255);
+}
+
+.brand-content button {
+    position: absolute;
+    visibility: hidden;
+}
+
+/* Box Styles (Common for bbox and pbox) */
+.box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+    position: relative;
+    top: 0;
+    margin: 10px auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 1000px;
+    background-color: #000000;
+    backdrop-filter: blur(10px);
+    transition: 0.3s ease-in-out;
+}
+
+.box.blue {
+    border: 1px solid lightskyblue;
+}
+
+.box.pink {
+    border: 1px solid pink;
+}
+
+.box h2 {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    font-size: 30px;
+}
+
+.box hr {
+    width: 400px;
+}
+
+/* Number Badge */
+.number {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    color: white;
+    padding: 5px;
+    border-radius: 50px;
+    border: 2px solid white;
+    font-size: 20px;
+    text-align: center;
+}
+
+.number.blue {
+    background-color: rgb(0, 164, 193);
+}
+
+.number.pink {
+    background-color: orchid;
+}
+
+/* Button Groups */
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.box .button-group button {
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    flex-direction: column;
+    margin: 20px;
+    top: 0;
+    padding: 20px;
+    width: 200px;
+    border-radius: 10px;
+    transition: 0.3s ease;
+    box-shadow: none;
+    border: none;
+    cursor: pointer;
+}
+
+.box.blue .button-group button {
+    background-color: #00495d;
+    color: rgb(185, 223, 254);
+}
+
+.box.blue .button-group button:hover {
+    background-color: #00addc;
+    box-shadow: 0px 1px 15px #03d5ff;
+    top: -3px;
+}
+
+.box.pink .button-group button {
+    background-color: #55005d;
+    color: rgb(254, 185, 238);
+}
+
+.box.pink .button-group button:hover {
+    background-color: #ea00ff;
+    box-shadow: 0px 1px 15px orchid;
+    top: -3px;
+}
+
+/* Category Headers */
+.category {
+    text-align: center;
+    font-weight: lighter;
+    font-size: 40px;
+}
+
+/* Main Page Specific Styles */
+.front-picture {
+    font-size: larger;
+    font-family: monospace;
+    color: #fff5b6;
+}
+
+.front-picture img {
+    border: 1px lightskyblue solid;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+}
+
+.scroll-container {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    white-space: nowrap;
+    padding: 20px;
+    overflow: auto;
+    background-color: #1a1a1a;
+    scrollbar-width: none;
+    width: 98.5%;
+}
+
+.scroll-container img {
+    border: 1px lightskyblue solid;
+    border-radius: 8px;
+    padding: 10px;
+    height: 300px;
+    width: 400px;
+    transition: 0.3s ease;
+}
+
+.scroll-container img:hover {
+    transform: scale(1.02);
+}
+
+.image-item {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 10px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.who-we-are {
+    position: relative;
+    top: 0;
+    margin: 10px auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 1000px;
+    background-color: #000000;
+    border: 1px solid lightskyblue;
+    backdrop-filter: blur(10px);
+    transition: 0.3s ease-in-out;
+    line-height: 3;
+}
+
+.who-we-are h2 {
+    color: transparent;
+    background-clip: text;
+    background-image: linear-gradient(#019fd4 0%, #80e3ff);
+}
+
+.who-we-are hr {
+    width: 400px;
+}
+
+.who-we-are:hover {
+    box-shadow: 0px 1px 15px #0cd6ff81;
+    top: -3px;
+}
+
+.mid-text {
+    text-align: center;
+    font-size: 40px;
+}
+
+.cards {
+    width: 1000px;
+    display: flex;
+    gap: 100px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    border-radius: 8px;
+    border: 1px solid lightblue;
+    background-color: black;
+    padding: 20px;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    width: 400px;
+    height: 500px;
+    top: 0;
+    color: transparent;
+    background-clip: text;
+    background-image: linear-gradient(#019fd4 0%, #80e3ff);
+    text-align: center;
+    font-weight: lighter;
+    background-color: #737373;
+    border: 1px solid lightskyblue;
+    border-radius: 8px;
+    transition: 0.3s ease-in-out;
+}
+
+.card img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+}
+
+.card .cards-captions {
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+}
+
+.card:hover {
+    box-shadow: 0px 1px 15px #0cd6ff81;
+    top: -3px;
+}
+
+/* Login Page Specific Styles */
+.login-body {
+    background-color: #1a1a1a;
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #1a1a1a url('images/spec_forge.png') no-repeat center -20px;
+    background-size: 100%;
+    background-attachment: fixed;
+}
+
+.login-form {
+    top: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #242424;
+    border: 1px solid orchid;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+.login-form:hover {
+    box-shadow: 
+        0 0 3px orchid,
+        0 0 6px orchid, 
+        0 0 9px orchid,
+        0 0 12px orchid;
+    top: -3px;
+}
+
+.login-form input {
+    background-color: #f0f0f0;
+    border: 2px solid orchid;
+    border-radius: 8px;
+    margin: 0 auto;
+    width: 300px;
+    height: 50px;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.login-form input:hover {
+    background-color: #d8d8d8;
+}
+
+.login-form .button-container {
+    display: flex;
+    gap: 80px;
+    margin: 10px;
+}
+
+.login-form button {
+    padding: 16px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background-color: black;
+    border: 1px solid orchid;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.login-form button:hover {
+    background-color: rgb(117, 75, 116);
+}
+
+.login-form label {
+    color: white;
+}
+
+.para {
+    position: relative;
+    top: 0;
+    background-color: black;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border: 1px solid pink;
+    transition: 0.3s ease-in-out;
+    border-radius: 8px;
+}
+
+.text {
+    padding: 20px;
+    color: white;
+}
+
+.para h1 {
+    text-align: center;
+    font-size: 50px;
+}
+
+.neon:hover {
+    color: rgb(255, 63, 223);
+    text-shadow: 0 0 2px orchid;
+}
+
+.neon {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-shadow: 0 0 10px orchid;
+    letter-spacing: 2px;
+    padding: 20px;
+    border-radius: 8px;
+    border: none;
+    position: relative;
+}
+
+.neon::before,
+.neon::after {
+    content: '';
+    position: absolute;
+    border: 1px solid pink;
+}
+
+.neon::before {
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 50%;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 8px 0 0 0;
+}
+
+.neon::after {
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 50%;
+    border-left: none;
+    border-top: none;
+    border-radius: 0 0 8px 0;
+}
+
+.right-para, .left-para {
+    position: absolute;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    margin: auto 30px;
+    height: 50vh;
+    padding: 10px 10px 10px 10px;
+    max-width: 25%;
+    color: white;
+    font-size: 60px;
+    border: 1px dotted pink;
+    border-radius: 8px;
+    transition: 0.3s ease-in-out;
+}
+
+.right-para {
+    right: 0;
+}
+
+.right-para:hover, .left-para:hover {
+    box-shadow: 
+        0 0 3px pink,
+        0 0 6px pink, 
+        0 0 9px pink,
+        0 0 12px pink;
+    top: -3px;
+}
+
+.text-para {
+    line-height: 2px;
+}
