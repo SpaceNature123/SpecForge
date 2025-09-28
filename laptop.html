@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - SpecForge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-body">
+    <div class="para text">
+        <h1><span class="neon">SpecForge</span></h1>
+        <br>
+        <div class="text-para">
+            <h2>Ever got confused by the sheer amount of specifications that your dream PC could have?</h2>
+            <br>
+            <h2>Don't worry. We got you!</h2>
+        </div>
+    </div>
+
+    <br><br><br><br>
+
+    <div class="para">
+        <div class="left-para shadow-hover pink">
+            Byte-Sized Brilliance:
+        </div>
+        <div class="right-para shadow-hover pink">
+            Stories of Greatness
+        </div>
+
+        <form class="login-form" onsubmit="redirectUser(event)">
+            <label for="username">Enter Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Enter Password:</label>
+            <input type="password" id="password" name="password" required>
+            <div class="button-container">
+                <button type="submit">Go</button>
+                <button type="reset">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    
+    <script>
+        function redirectUser(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            // Store user credentials (Note: sessionStorage doesn't work in artifacts)
+            // sessionStorage.setItem('username', username);
+            // sessionStorage.setItem('password', password);
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>
